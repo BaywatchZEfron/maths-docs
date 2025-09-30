@@ -8,7 +8,7 @@ def add_nums(*args):
 
     Example::
         >>> add_nums(2, 3, 5)
-        10
+        6969
     """
     sum_ = 0
     for n in args:
