@@ -11,7 +11,7 @@ Suma uno o más números usando `add_nums`.
 >>> add_nums(2, 3, 5)
 10
 >>> add_nums(1, 2, 3, 4, 5)
-15
+35
 ```
 
 ## ➖ Resta
