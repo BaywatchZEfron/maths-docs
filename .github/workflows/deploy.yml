@@ -3,28 +3,23 @@ name: Deploy MkDocs
 on:
   push:
     branches:
-      - main   # cámbialo a 'master' si tu rama principal se llama así
+      - main   # cambia a 'master' si tu rama principal se llama master
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
-          fetch-depth: 0   # importante para que mkdocs pueda acceder al historial
+          fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      - name: Install dependencies
-        run: |
+      - run: |
           python -m pip install --upgrade pip
           pip install mkdocs mkdocs-material
 
-      - name: Deploy to GitHub Pages
-        run: |
-          mkdocs gh-deploy --force
+      - run: mkdocs gh-deploy --force
